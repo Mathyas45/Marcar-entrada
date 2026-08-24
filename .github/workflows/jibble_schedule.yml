@@ -1,0 +1,77 @@
+name: Jibble Attendance Schedule
+
+on:
+  schedule:
+    # --- Tiempos en UTC (Perú es UTC-5) ---
+    # 1. Cron de Entrada: 08:30 AM Perú = 13:30 UTC. Días de Lunes a Viernes (1-5)
+    - cron: '30 13 * * 1-5'
+    
+    # 2. Cron de Salida (Lunes y Jueves): 05:30 PM Perú = 22:30 UTC. Días (1,4)
+    - cron: '30 22 * * 1,4'
+    
+    # 3. Cron de Salida (Martes, Miércoles, Viernes): 06:30 PM Perú = 23:30 UTC. Días (2,3,5)
+    - cron: '30 23 * * 2,3,5'
+
+  workflow_dispatch:
+    inputs:
+      action_type:
+        description: 'Tipo de acción a ejecutar manualmente'
+        required: true
+        default: 'IN'
+        type: choice
+        options:
+          - 'IN'
+          - 'VERIFY_OR_OUT'
+
+jobs:
+  run-automation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Determine Action Type
+        id: set-action
+        run: |
+          ACTION="${{ github.event.inputs.action_type }}"
+          
+          # Si se ejecuta mediante el cron schedule (no manual)
+          if [ "${{ github.event_name }}" == "schedule" ]; then
+            HOUR=$(date -u +"%H")
+            # 13 UTC equivale a la ejecución de entrada de la mañana
+            if [ "$HOUR" == "13" ]; then
+              ACTION="IN"
+            else
+              ACTION="VERIFY_OR_OUT"
+            fi
+          fi
+          
+          echo "ACTION_TYPE=$ACTION" >> $GITHUB_ENV
+          echo "Ejecutando acción: $ACTION"
+
+      - name: Run Jibble Script
+        env:
+          JIBBLE_EMAIL: ${{ secrets.JIBBLE_EMAIL }}
+          JIBBLE_PASSWORD: ${{ secrets.JIBBLE_PASSWORD }}
+          ACTION_TYPE: ${{ env.ACTION_TYPE }}
+        run: npm start
+
+      - name: Upload Debug Evidence (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: failure-screenshots
+          path: '*.png'
+          retention-days: 1

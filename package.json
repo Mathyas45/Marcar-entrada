@@ -1,0 +1,12 @@
+{
+  "name": "jibble-automation",
+  "version": "1.0.0",
+  "description": "Automated Jibble 2 attendance tracking",
+  "main": "jibble.js",
+  "scripts": {
+    "start": "node jibble.js"
+  },
+  "dependencies": {
+    "playwright": "^1.42.1"
+  }
+}
