@@ -3,8 +3,8 @@ name: Jibble Attendance Schedule
 on:
   schedule:
     # --- Tiempos en UTC (Perú es UTC-5) ---
-    # 1. Cron de Entrada: 08:30 AM Perú = 13:30 UTC. Días de Lunes a Viernes (1-5)
-    - cron: '30 13 * * 1-5'
+    # 1. Cron de Entrada: 08:30 AM Perú = 13:25 UTC. Días de Lunes a Viernes (1-5)
+    - cron: '25 13 * * 1-5'
     
     # 2. Cron de Salida (Lunes y Jueves): 05:30 PM Perú = 22:30 UTC. Días (1,4)
     - cron: '30 22 * * 1,4'
