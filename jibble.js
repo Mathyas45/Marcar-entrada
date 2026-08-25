@@ -46,8 +46,15 @@ async function run() {
         userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
         locale: 'es-PE',
         timezoneId: 'America/Lima',
-        permissions: ['geolocation', 'notifications']
+        permissions: ['geolocation', 'notifications'],
+        geolocation: { latitude: -12.046374, longitude: -77.042793 } // Coordenadas base de Lima, Perú
     });
+    
+    // Engañar a los sistemas anti-bots de Auth0 (Jibble usa Auth0)
+    await context.addInitScript(() => {
+        Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    });
+    
     const page = await context.newPage();
 
     try {
@@ -58,11 +65,13 @@ async function run() {
         
         const emailSelector = '[data-testid="emailOrPhone"]';
         await page.waitForSelector(emailSelector, { timeout: 15000 });
-        await page.type(emailSelector, email, { delay: 50 });
+        await page.click(emailSelector);
+        await page.type(emailSelector, email, { delay: 100 });
         
         const pwdSelector = 'input[type="password"]';
         await page.waitForSelector(pwdSelector, { timeout: 10000 });
-        await page.type(pwdSelector, password, { delay: 50 });
+        await page.click(pwdSelector);
+        await page.type(pwdSelector, password, { delay: 100 });
         
         const submitBtnSelector = '[data-testid="login-button"]';
         await page.waitForSelector(submitBtnSelector, { timeout: 5000 });
@@ -72,7 +81,23 @@ async function run() {
             return btn && !btn.disabled;
         }, submitBtnSelector);
         
-        await page.click(submitBtnSelector);
+        console.log("🖱️ Haciendo clic en Iniciar Sesión...");
+        await page.click(submitBtnSelector, { force: true });
+
+        console.log("⏳ Esperando redirección desde Auth0 a la aplicación...");
+        // Esperar a que la URL ya no tenga "/login" (significa que pasamos la seguridad)
+        await page.waitForURL('**/*', { timeout: 30000, waitUntil: 'domcontentloaded' });
+        let currentUrl = page.url();
+        console.log("🔗 URL actual tras el clic:", currentUrl);
+        
+        if (currentUrl.includes('/login')) {
+            // Si seguimos en login, esperamos un poquito más por si está lento
+            await delay(5000);
+            currentUrl = page.url();
+            if (currentUrl.includes('/login')) {
+                throw new Error("El login fue bloqueado o no redirigió. Seguimos en la página de inicio.");
+            }
+        }
 
         console.log("⏳ Esperando a que cargue el dashboard...");
         await page.waitForSelector('.q-header', { timeout: 30000 });
