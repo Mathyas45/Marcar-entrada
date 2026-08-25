@@ -128,8 +128,9 @@ async function handleClockIn(page) {
         try {
             console.log(`\n--- Intento de Entrada ${attempt}/${MAX_RETRIES} ---`);
             
-            // Buscar un botón de Quasar (.q-btn) que sea rojo o verde, y esperar hasta 15 segundos
-            const actionBtn = await page.waitForSelector('.q-btn.bg-positive, .q-btn.bg-green, .q-btn.bg-negative, .q-btn.bg-red', { timeout: 15000 });
+            // Buscar estrictamente el ÚLTIMO botón en la barra superior (Play/Stop) para ignorar el de Sync
+            const actionBtn = page.locator('.q-header .q-btn').last();
+            await actionBtn.waitFor({ state: 'visible', timeout: 15000 });
             const btnClass = await actionBtn.evaluate(el => el.className);
             
             if (btnClass.includes('negative') || btnClass.includes('red')) {
@@ -186,8 +187,9 @@ async function handleVerifyOrOut(page) {
         try {
             console.log(`\n--- Intento de Salida ${attempt}/${MAX_RETRIES} ---`);
             
-            // Buscar un botón de Quasar (.q-btn) que sea rojo o verde, y esperar hasta 15 segundos
-            const actionBtn = await page.waitForSelector('.q-btn.bg-positive, .q-btn.bg-green, .q-btn.bg-negative, .q-btn.bg-red', { timeout: 15000 });
+            // Buscar estrictamente el ÚLTIMO botón en la barra superior (Play/Stop) para ignorar el de Sync
+            const actionBtn = page.locator('.q-header .q-btn').last();
+            await actionBtn.waitFor({ state: 'visible', timeout: 15000 });
             const btnClass = await actionBtn.evaluate(el => el.className);
             
             if (btnClass.includes('positive') || btnClass.includes('green')) {

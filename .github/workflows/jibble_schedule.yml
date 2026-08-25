@@ -4,14 +4,10 @@ on:
   schedule:
     # --- Tiempos en UTC (Perú es UTC-5) ---
     # 1. Cron de Entrada: 08:25 AM Perú = 13:25 UTC. Días de Lunes a Viernes (1-5)
-
     - cron: '25 13 * * 1-5'
     
-    # 2. Cron de Salida (Lunes y Jueves): 05:30 PM Perú = 22:30 UTC. Días (1,4)
-    - cron: '30 22 * * 1,4'
-    
-    # 3. Cron de Salida (Martes, Miércoles, Viernes): 06:30 PM Perú = 23:30 UTC. Días (2,3,5)
-    - cron: '30 23 * * 2,3,5'
+    # 2. Cron de Salida (Todos los días Lunes a Viernes): 06:30 PM Perú = 23:30 UTC.
+    - cron: '30 23 * * 1-5'
 
   workflow_dispatch:
     inputs:
@@ -51,8 +47,9 @@ jobs:
           # Si se ejecuta mediante el cron schedule (no manual)
           if [ "${{ github.event_name }}" == "schedule" ]; then
             HOUR=$(date -u +"%H")
-            # 13 UTC equivale a la ejecución de entrada de la mañana
-            if [ "$HOUR" == "13" ]; then
+            # GitHub Actions puede retrasar los trabajos en horas pico.
+            # Cualquier ejecución antes de las 18:00 UTC (1:00 PM Perú) se considera ENTRADA
+            if [ "$HOUR" -lt "18" ]; then
               ACTION="IN"
             else
               ACTION="VERIFY_OR_OUT"
