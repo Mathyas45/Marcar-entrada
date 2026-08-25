@@ -100,7 +100,8 @@ async function handleClockIn(page) {
         try {
             console.log(`\n--- Intento de Entrada ${attempt}/${MAX_RETRIES} ---`);
             
-            const actionBtn = await page.waitForSelector('.q-header button:last-of-type', { timeout: 10000 });
+            // Buscar un botón de Quasar (.q-btn) que sea rojo o verde, y esperar hasta 15 segundos
+            const actionBtn = await page.waitForSelector('.q-btn.bg-positive, .q-btn.bg-green, .q-btn.bg-negative, .q-btn.bg-red', { timeout: 15000 });
             const btnClass = await actionBtn.evaluate(el => el.className);
             
             if (btnClass.includes('negative') || btnClass.includes('red')) {
@@ -109,7 +110,8 @@ async function handleClockIn(page) {
             }
 
             console.log("▶️ Botón verde detectado. Haciendo clic para marcar entrada...");
-            await actionBtn.click();
+            // Forzamos el clic por si algún mensaje de "Bienvenido a Jibble" lo está tapando
+            await actionBtn.click({ force: true });
 
             console.log("⚙️ Esperando formulario de confirmación...");
             await delay(2500); 
@@ -156,7 +158,8 @@ async function handleVerifyOrOut(page) {
         try {
             console.log(`\n--- Intento de Salida ${attempt}/${MAX_RETRIES} ---`);
             
-            const actionBtn = await page.waitForSelector('.q-header button:last-of-type', { timeout: 10000 });
+            // Buscar un botón de Quasar (.q-btn) que sea rojo o verde, y esperar hasta 15 segundos
+            const actionBtn = await page.waitForSelector('.q-btn.bg-positive, .q-btn.bg-green, .q-btn.bg-negative, .q-btn.bg-red', { timeout: 15000 });
             const btnClass = await actionBtn.evaluate(el => el.className);
             
             if (btnClass.includes('positive') || btnClass.includes('green')) {
@@ -165,7 +168,8 @@ async function handleVerifyOrOut(page) {
             }
 
             console.log("⏹️ Botón rojo detectado. Forzando Clock Out...");
-            await actionBtn.click();
+            // Forzamos el clic por si algún mensaje de "Bienvenido a Jibble" lo está tapando
+            await actionBtn.click({ force: true });
 
             console.log("⚙️ Esperando formulario de confirmación...");
             await delay(2500);
