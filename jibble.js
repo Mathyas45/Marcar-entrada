@@ -43,56 +43,57 @@ async function run() {
     // Usamos Firefox en modo VISIBLE (headless: false) para burlar la detección de bots.
     // En GitHub Actions usaremos una pantalla virtual (Xvfb) para que no crashee.
     const browser = await firefox.launch({ headless: false }); 
-    const context = await browser.newContext({
+    
+    const fs = require('fs');
+    let contextOptions = {
         viewport: { width: 1280, height: 720 },
         locale: 'es-PE',
         timezoneId: 'America/Lima',
         permissions: ['geolocation', 'notifications'],
         geolocation: { latitude: -12.046374, longitude: -77.042793 }
-    });
-    
+    };
+
+    if (fs.existsSync('estado.json')) {
+        contextOptions.storageState = 'estado.json';
+        console.log("🎟️ Usando Pase VIP (estado.json) para saltar el login...");
+    }
+
+    const context = await browser.newContext(contextOptions);
     const page = await context.newPage();
 
     try {
         console.log("🌐 Navegando a Jibble...");
-        await page.goto('https://web.jibble.io/login', { waitUntil: 'networkidle' });
+        // Vamos directo a la app
+        await page.goto('https://web.jibble.io/app', { waitUntil: 'networkidle' });
 
-        console.log("🔑 Iniciando sesión...");
-        
-        const emailSelector = '[data-testid="emailOrPhone"]';
-        await page.waitForSelector(emailSelector, { timeout: 15000 });
-        await page.click(emailSelector);
-        await page.type(emailSelector, email, { delay: 100 });
-        
-        const pwdSelector = 'input[type="password"]';
-        await page.waitForSelector(pwdSelector, { timeout: 10000 });
-        await page.click(pwdSelector);
-        await page.type(pwdSelector, password, { delay: 100 });
-        
-        const submitBtnSelector = '[data-testid="login-button"]';
-        await page.waitForSelector(submitBtnSelector, { timeout: 5000 });
-        
-        await page.waitForFunction((selector) => {
-            const btn = document.querySelector(selector);
-            return btn && !btn.disabled;
-        }, submitBtnSelector);
-        
-        console.log("🖱️ Haciendo clic en Iniciar Sesión...");
-        await page.click(submitBtnSelector, { force: true });
+        if (page.url().includes('/login')) {
+            console.log("🔑 Pase VIP no detectado o expirado. Iniciando sesión manualmente...");
+            
+            const emailSelector = '[data-testid="emailOrPhone"]';
+            await page.waitForSelector(emailSelector, { timeout: 15000 });
+            await page.click(emailSelector);
+            await page.type(emailSelector, email, { delay: 100 });
+            
+            const pwdSelector = 'input[type="password"]';
+            await page.waitForSelector(pwdSelector, { timeout: 10000 });
+            await page.click(pwdSelector);
+            await page.type(pwdSelector, password, { delay: 100 });
+            
+            const submitBtnSelector = '[data-testid="login-button"]';
+            await page.waitForSelector(submitBtnSelector, { timeout: 5000 });
+            
+            await page.waitForFunction((selector) => {
+                const btn = document.querySelector(selector);
+                return btn && !btn.disabled;
+            }, submitBtnSelector);
+            
+            console.log("🖱️ Haciendo clic en Iniciar Sesión...");
+            await page.click(submitBtnSelector, { force: true });
 
-        console.log("⏳ Esperando redirección desde Auth0 a la aplicación...");
-        // Esperar a que la URL ya no tenga "/login" (significa que pasamos la seguridad)
-        await page.waitForURL('**/*', { timeout: 30000, waitUntil: 'domcontentloaded' });
-        let currentUrl = page.url();
-        console.log("🔗 URL actual tras el clic:", currentUrl);
-        
-        if (currentUrl.includes('/login')) {
-            // Si seguimos en login, esperamos un poquito más por si está lento
-            await delay(5000);
-            currentUrl = page.url();
-            if (currentUrl.includes('/login')) {
-                throw new Error("El login fue bloqueado o no redirigió. Seguimos en la página de inicio.");
-            }
+            console.log("⏳ Esperando redirección desde Auth0 a la aplicación...");
+            await page.waitForURL('**/app/**', { timeout: 30000, waitUntil: 'domcontentloaded' });
+        } else {
+            console.log("✅ Acceso directo exitoso mediante Pase VIP.");
         }
 
         console.log("⏳ Esperando a que cargue el dashboard...");

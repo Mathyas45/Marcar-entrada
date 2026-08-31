@@ -1,0 +1,259 @@
+{
+  "cookies": [
+    {
+      "name": "_gcl_au",
+      "value": "1.1.1239725464.1788191577",
+      "domain": ".jibble.io",
+      "path": "/",
+      "expires": 1795967577,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "QXyJLGpmHNCP8UBwaXikLjdrR.Ex8uA8Tr94MwGx1fs-1788191577.950141-1.0.1.1-gSON3yQchV1E5cwSukqctGpVZp84D0Wt2MJEhs6KhclJyBEFRluP10CmeMWWWewfhkwKVATA3cN9cFbBkEPHrz6spKwoPH9yVYD5NPSmS_2hwObiVIvJfd9Qc8.ogO4Q",
+      "domain": ".hs-scripts.com",
+      "path": "/",
+      "expires": 1788193377.191297,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.81557193.1788191579",
+      "domain": ".jibble.io",
+      "path": "/",
+      "expires": 1822751597.405202,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "ElkBEGcbGf.hGvpi8OaZFq8_hOV7_nqMOzQeGz9P_DM-1788191578.6159182-1.0.1.1-2a1ZqgkO65xHhRao6HvAle.Z2mtoW9qFHsoXonD5Vkm9P0EdWQ8t_nGI8tlB8TFYIpDpybIzkSE6nj.t9_Nyp8f8WJZJTKwN025WyTWWQKsq.Emxsu.iDOkBuYPv4Iy1",
+      "domain": ".hs-analytics.net",
+      "path": "/",
+      "expires": 1788193378.766137,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "UB58zLAIVEMlMr9v5iEJ9fYrj6nJnNLQ3W1hVwW4Qxg-1788191578.7130916-1.0.1.1-1AFJNOK9yKj2PELCfJzX1c2gkn1EfhwRhMz2o3H16hfYeXj1MhKpWSdOh0BXWxsu6gBeZ13Tth223_M7itDCJqoqX5aE6GRRAP_PKIIgLj1oOjR8fVFaMLMHl4_li0lO",
+      "domain": ".hs-banner.com",
+      "path": "/",
+      "expires": 1788193378.838586,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "BWCh.Jml4ANZ6KnFM67mGxxeltGgCxzNLrbYdgIPTAA-1788191578.7605553-1.0.1.1-ZSsPipRno4mvgotGTBqhTz8u_xXrr0a2sSwJrmEi0xRDZYXThz569FpvwP6juAscABoiYCeCNKgNmkr6XebtAlg2FUfhdwGCK17kUnfuGfGeUgC43AK9qSbB3vmu0urr",
+      "domain": ".hsadspixel.net",
+      "path": "/",
+      "expires": 1788193378.863664,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "IDE",
+      "value": "AHWqTUmqj21hdMqbgItC10SrnKl9vcVPml259PYawhWIOHpqfKVNHhY4cLPAw_31",
+      "domain": ".doubleclick.net",
+      "path": "/",
+      "expires": 1822751580.769374,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "Ljkftr3oVmiXl4AKxGh8vEWPqwBlgrmEBV6M3xGtbUg-1788191580.6794364-1.0.1.1-zFYvUrKZpTHzP2vO9QmhfLd5x8pFTL9vJ8LPa1Dz0c5ZegT7_Vju2n2LBk5zMZuONuBM1cH_5mOaAnFdk1FE9EnWlpd5uDfQxMRf5H9AYwMQ8IaRbw9LLa2MkU2sej6K",
+      "domain": ".hsforms.com",
+      "path": "/",
+      "expires": 1788193380.89537,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__hstc",
+      "value": "11618603.3611d2601f96369343ce6671ed968958.1788191580901.1788191580901.1788191580901.1",
+      "domain": ".jibble.io",
+      "path": "/",
+      "expires": 1803743597,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "hubspotutk",
+      "value": "3611d2601f96369343ce6671ed968958",
+      "domain": ".jibble.io",
+      "path": "/",
+      "expires": 1803743597,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__hssrc",
+      "value": "1",
+      "domain": ".jibble.io",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "78QyuQgt0lGT84z.boSWJL5hk8k9jReOTbpOet14ewM-1788191581.256878-1.0.1.1-mVMtXbMbNT42oVQdz5g1KdAY2jBzopnwdy_4ZHSiRn4zDC.xR24LVm2MiXMWGHLHDnyEtBUk.a79DQYlmZYcQDGFVMVh49_kftZZ3cBH9HfDfNHwID6xMMNteBUrG1u6",
+      "domain": ".hubspot.com",
+      "path": "/",
+      "expires": 1788193381.481583,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_fbp",
+      "value": "fb.1.1788191582691.754823470556414898",
+      "domain": ".jibble.io",
+      "path": "/",
+      "expires": 1795967597,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "fr",
+      "value": "0L63SUsh9UN2BJLPw..BqlaNe...1.0.BqlaNe.",
+      "domain": ".facebook.com",
+      "path": "/",
+      "expires": 1795967582.913859,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "intercom-id-pp7sdr39",
+      "value": "ad37349e-509a-4edb-854f-724cd2e1a2e0",
+      "domain": ".jibble.io",
+      "path": "/",
+      "expires": 1811521597,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "intercom-session-pp7sdr39",
+      "value": "",
+      "domain": ".jibble.io",
+      "path": "/",
+      "expires": 1788796397,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "intercom-device-id-pp7sdr39",
+      "value": "a17dd240-9838-4e41-9ae1-8ff1ebd8cc19",
+      "domain": ".jibble.io",
+      "path": "/",
+      "expires": 1811521597,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "idsrv.session",
+      "value": "D430EE0AAE11AF47E51B4B8DDA14E739",
+      "domain": "identity.prod.jibble.io",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": ".AspNetCore.Identity.Application",
+      "value": "CfDJ8Mxr99Hpi5RJh8yhD4cdQlxhByfGvvMWjShU0Ktm-1SZ8MIDGQP_-_2pOaElxMCQUvSOuYkj5YHyvR_2mTxIYC3AfBuucqkHSUGiS5n3vMimZRz4ltNG_0LpJOUeH1HstIlZH6liSZv-Z6p1Im0TURxLlPLCSy5q4tpdXS7BGVdE_Js2f-y5PEHBZI2b1iriIn_wviCwP9AQJl-M95Z-79-qg3B2pzBZ3hhUQbI5rfLN4CBT7ZtpuUH33l6o9Cf-3a5oKnBWGfj-HG-Ng4hoy_Wi2k3MSSq-sfucqpbhbgLB-1K2PL1YdEPUdXiDHBXWnbkqbWrdPVzB1wcLRkdfF7B6oNL2Ndwr38otO_dnTwlEzwhI4XMSVQ9Opwc696ttvefKFzDiVjSMDlstgyP2mifoUy-zw2Ojx6gFzrLtI0Td0hQlHZq2wjGLoTpMmYx498Jipz_KTuxFDWndmQw5Re72fQW-3iLGtaP3YBWl3JMN4AHM9Gkwuw8vUlICm8SG0XW9nlI8M0mp2fqF4LyU6E_mIPsTjF9ogZWbOb6BvpH-Bn-62OWic-pkKnnw_1cXO9Ml49Jr35SusxBMzhvTiZpQgNYQEsh6Wiy2o-LINrqZsCGAMYZJ1GIzYNz_-yF_RlXXm-oDGNBfm5E3C27WnBHTl-091qC0fwnmp3sboq_2ojR2BJ-itl9CK6nwLoUpDapuOaUfcnCkwOWqe3FAMEJM9NN7YtqnU97hb8TxfFsfBEqq-5i0VyG0GLvqU65G2QBazjJDq1JAoJ4861yCjusKZoDlJCtRhD3ENfCa0Gjic4wOSisrIsCWOpg_wThwdIeczYDZWivrjF-6uTSCHjgePbjifw8Nn5_-UAoIm-tr1OUhJgZVcOZ7yAuQokeGVlpOw4tMrBOwN2y3pev1tvYN41Pfx06rJ0CXi5omJVYxFnkYp1V9HaA9ql9keRbZqUfXSgMWx5mG7KgTWg2KqgEJJkNSHMaEaOjGSXZN8LifTbzKkQ9RHORncHph7wUOXRCpx44FfKMlHaTepMYpW28d-xqcjy12o3bC1EjTzPdTfnDvxR_I7C68CsForAQ5Jk1csEouHZLeMpBrNoFiR-eJ7AZOmVhjrOcZERt1JiVwwTLr8Kff7OCp2xFCL86XtaZkf9C8FAYXLnG2X8zr2xAYoLSG4xrrylZ-SB-O7t-oDtVtyiPO1VxksolOgDElBaT0ocH9YXma9NOq83t8z0027LyzURTsjgcx5W_NqkLezXwNpudOXZFfY4iisW7Llqh7FM7VszsGmsGDfby_Cc1xX8mKbnLioUHFWwNnlfE_dee50osb7m2w5Iw675d9JX9pdv31GpmGpfXtHKLrQTKDnymARi5hkEtt7haCQmfmDMe00ZDoEAVPUvRwayFTMg",
+      "domain": "identity.prod.jibble.io",
+      "path": "/",
+      "expires": 1789401194.427947,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga_GB6MJWXV2B",
+      "value": "GS2.1.s1788191578$o1$g1$t1788191597$j41$l0$h1643375291",
+      "domain": ".jibble.io",
+      "path": "/",
+      "expires": 1822751597.046811,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__hssc",
+      "value": "11618603.3.1788191580901",
+      "domain": ".jibble.io",
+      "path": "/",
+      "expires": 1788193397,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_C24TJ3ZS3Z",
+      "value": "GS2.1.s1788191580$o1$g1$t1788191597$j43$l0$h1402917617",
+      "domain": ".jibble.io",
+      "path": "/",
+      "expires": 1822751597.418435,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://web.jibble.io",
+      "localStorage": [
+        {
+          "name": "intercom.intercom-state-pp7sdr39",
+          "value": "{\"app\":{\"openConfig\":{\"unifiedStyling\":true,\"openTo\":\"home\",\"spaces\":[{\"type\":\"home\",\"label\":\"Inicio\",\"navigationLabel\":\"Inicio\",\"badge\":null},{\"type\":\"messages\",\"label\":\"Mensajes\",\"navigationLabel\":\"Mensajes\",\"badge\":null},{\"type\":\"tickets\",\"label\":\"Tickets\",\"navigationLabel\":\"Tickets\",\"badge\":null},{\"type\":\"tasks\",\"label\":\"Tareas\",\"navigationLabel\":\"Tareas\",\"badge\":null}],\"userHasReceivedChecklists\":false,\"userHasLiveNewsfeed\":false,\"userHasTickets\":false},\"selfServeSuggestionsMatch\":false,\"name\":\"Jibble\",\"features\":{\"anonymousInboundMessages\":true,\"googleAnalytics\":false,\"hubspotInstalled\":false,\"inboundMessages\":true,\"marketoEnrichmentInstalled\":false,\"googleAnalytics4Integration\":true,\"improveOpenBehavior\":false},\"helpCenterSiteUrl\":\"https://help2.jibble.io\",\"inboundConversationsDisabled\":false,\"isDeveloperWorkspace\":false,\"customGoogleAnalyticsTrackerId\":null},\"launcher\":{\"isLauncherEnabled\":false},\"launcherDiscoveryMode\":{\"hasDiscoveredLauncher\":true},\"launcherSettings\":{\"alignment\":\"right\",\"color\":\"#858585\",\"colorDark\":\"#858585\",\"hasRequiredFeatures\":true,\"horizontalPadding\":20,\"instantBootEnabled\":true,\"launcherLogoUrl\":null,\"launcherLogoDarkUrl\":null,\"messengerLayout\":\"widget\",\"messengerModeSwitcherEnabled\":false,\"secondaryColor\":\"#FF7A21\",\"secondaryColorDark\":\"#FF7A21\",\"showLauncher\":false,\"themeMode\":\"light\",\"updatedAt\":1788188826,\"verticalPadding\":20,\"isLoading\":false},\"user\":{\"id\":\"6a95a35e87ca4e23fefd1205\",\"role\":\"visitor\",\"locale\":\"es\",\"hasConversations\":false},\"message\":{},\"conversations\":{\"byId\":{}},\"openOnBoot\":{\"type\":null,\"metadata\":{},\"lastOpenAtTimestamp\":1788191598087},\"operator\":{\"lastComposerEvent\":0},\"router\":{\"isInitialized\":false,\"navigationQueue\":[]}}"
+        },
+        {
+          "name": "lastExternalReferrerTime",
+          "value": "1788191582377"
+        },
+        {
+          "name": "jibble.loggedInUsername",
+          "value": "mcoronado@tynpu.com"
+        },
+        {
+          "name": "oidc.user:https://identity.prod.jibble.io:spa.client",
+          "value": "{\"id_token\":\"eyJhbGciOiJSUzI1NiIsImtpZCI6IjkxOTQwQ0I1M0ZFQjhEMERGNEI1QzZBODdERjM4NkNGNDdBQzE5MjdSUzI1NiIsInR5cCI6IkpXVCIsIng1dCI6ImtaUU10VF9yalEzMHRjYW9mZk9HejBlc0dTYyJ9.eyJuYmYiOjE3ODgxOTE1OTksImV4cCI6MTc4ODE5MTg5OSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5wcm9kLmppYmJsZS5pbyIsImF1ZCI6InNwYS5jbGllbnQiLCJpYXQiOjE3ODgxOTE1OTksImF0X2hhc2giOiJkUENtc21ka1Z6OV8xNGU1NU5rQXRBIiwic19oYXNoIjoibEc5RkVBRTJ1U1V6UkI5UkQ1R3UxUSIsInNpZCI6IkQ0MzBFRTBBQUUxMUFGNDdFNTFCNEI4RERBMTRFNzM5Iiwic3ViIjoiNzlhNzA2NGMtMGVlMy00OTJjLWJkNzYtYmU4MzE0NGFlMDk0IiwiYXV0aF90aW1lIjoxNzg4MTkxNTk0LCJpZHAiOiJsb2NhbCIsImFtciI6WyJwd2QiXX0.WFpa3OFIa_M8CFJPDZ9rpUUJXGf0cQV0spTPMsXoaAFgoth8xYdUW3jyEL3VuGVlIrxKHsKKKSc_Kje_RizHUcF9N6x21qI24CicgD4KmfqkjnIWaLauEl8As2nnCWIPLGfXHowGvqNOtVJLeoUWiahRiKOTpORJEtuIdb4GVzx4BV8Aj91ChScHxlZd4VB6bfjGr2skDseTnYzO5bKe4yjYLbFajm1HbYHJYotmzry4CCPQRaWdV60Ds5nmoLYZr-TgXhtJ-0_Gw0JgCyZ3oD_6jd-lLjT2s83rg6jZQIE8L0uAaR65eF_aJCXAtarK65XeEVXpQCfNnLeAFDhmeFqe1xuE5vAmqpAYmVc4cP4kY6XzEE3N1wMu20-nt5zCjKi8KyiF5WTeOC3-tOycwJRbEz_Ljo_yO1TMjAOVW3fYYqaq3uH2gA8HHk2rcqo9WFIHZohNU2OSJgks-vxmfm_qug16zfVFzED9gVpT_PsfTo8mUFk4SWKEoBmhcjxR3sS08NchLcw4NngX3yEeOYaf0hYV7Fbbx0LTzNRdHC3gkKrg-2O3AwoKvGzmjtm5AAGnT7DY0N2G2Z1lQU1T0faVCKjNET3UOW6I3hTwj14o_zHfHmwRBTKY9LZuSWiyZNZLOQsY0uhV1A8beLrHLEI8uJ-Yt40_tlg_7_OUlBM\",\"session_state\":\"nvP1OFqrEgAUkTbQJPw6SBKSa6jqmnMn9tYz6Xa1IzM.F7A39385626D922DEFE7E4BB682D990C\",\"access_token\":\"eyJhbGciOiJSUzI1NiIsImtpZCI6IjkxOTQwQ0I1M0ZFQjhEMERGNEI1QzZBODdERjM4NkNGNDdBQzE5MjdSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6ImtaUU10VF9yalEzMHRjYW9mZk9HejBlc0dTYyJ9.eyJuYmYiOjE3ODgxOTE1OTksImV4cCI6MTc4ODI0OTE5OSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5wcm9kLmppYmJsZS5pbyIsImF1ZCI6ImFwaTEiLCJjbGllbnRfaWQiOiJzcGEuY2xpZW50Iiwic3ViIjoiNzlhNzA2NGMtMGVlMy00OTJjLWJkNzYtYmU4MzE0NGFlMDk0IiwiYXV0aF90aW1lIjoxNzg4MTkxNTk0LCJpZHAiOiJsb2NhbCIsIm5hbWUiOiJNYXRoeWFzIEFsb256byBDb3JvbmFkbyBNYXJ0w61uZXoiLCJlbWFpbCI6Im1jb3JvbmFkb0B0eW5wdS5jb20iLCJwaG9uZV9udW1iZXIiOiIrNTE5NTg3ODg3MDQiLCJwcnNpZCI6IjNiNDU0YjUwLWMwZmMtNDdhNy04YjE4LTllMGRjOTdlZDFmNCIsIm9yZ2lkIjoiYTNhYWI3MDgtOGRiZi00OGRjLTg4ZGEtYTMyZjgzYTQ2NjVlIiwicm9sZSI6Ik1lbWJlciIsInNpZCI6IkQ0MzBFRTBBQUUxMUFGNDdFNTFCNEI4RERBMTRFNzM5IiwiaWF0IjoxNzg4MTkxNTk5LCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwiYXBpMSIsImVtYWlsIiwicGhvbmUiXSwiYW1yIjpbInB3ZCJdfQ.lQdJeVxVwkM5AbABsqRvX1UI2UHYI4XUKt3Pu2k9C2iOM_XWjgiwbWRFpV7Im9PN3s6yVTBa1FpgjCMt_bA4v5f-YTC0ZKnCiSVJy6JsxHMmjeGxm4HFxPSxjVC913IKDoAotdWzXR_9LexocWD7tXY9PG0GQAjBg9ERXzMmuRKpHCb_GvU4M39ZnpZr-ZpzTxbEEETKnWcqIqKgvBSgYuYrHYg67G0Vg6wQ2JwAYPOaSapFpu0GFYFPsoCoYk_v04b3g7YEUCM9XF72iSyr0lhwi4kFDjlXsckQKf7F1Z-ziszq4UzrRacc60us4F6Fp6FGrKfAKEchoC93Y_0L5s8kZrwRzHQkWivRGxKa977WcZasd9hXRFRgp6av-xwIyPZzhgzjNzcdUzTeYltuJQulqg8CHaSPMJLjwHpCHGWan9g4lztRmmnJK9HR0kYIK7o-I4RMO8w9LIvfbd7pWD759rd3UHtpV0eScF6l8b-iZcOaQcr1hf_QrbJ4J2qHLbSm3WqeWVByJACNXbQPZyindquoPzngl3F8CxPLIEMGnSLdOJgbs8oH8wGKXMXqa6d-u5Dmn2C44ccWmv8sHgfDjP9PppasjlKkGUPBlyouO-u_xPcrGLxSDoDwlpjgPRUqtVhfnE-GtzfF1BuCC6-vFcNTHvxEuWiimkSbGWA\",\"token_type\":\"Bearer\",\"scope\":\"openid profile api1 email phone\",\"profile\":{\"exp\":1788191899,\"iss\":\"https://identity.prod.jibble.io\",\"aud\":\"spa.client\",\"iat\":1788191599,\"s_hash\":\"lG9FEAE2uSUzRB9RD5Gu1Q\",\"sid\":\"D430EE0AAE11AF47E51B4B8DDA14E739\",\"sub\":\"79a7064c-0ee3-492c-bd76-be83144ae094\",\"idp\":\"local\",\"name\":\"Mathyas Alonzo Coronado Martínez\",\"email\":\"mcoronado@tynpu.com\",\"email_verified\":false,\"phone_number\":\"+51958788704\",\"phone_number_verified\":false,\"prsid\":\"3b454b50-c0fc-47a7-8b18-9e0dc97ed1f4\",\"orgid\":\"a3aab708-8dbf-48dc-88da-a32f83a4665e\"},\"expires_at\":1788249199}"
+        },
+        {
+          "name": "lastExternalReferrer",
+          "value": "empty"
+        },
+        {
+          "name": "_gcl_ls",
+          "value": "{\"schema\":\"gcl\",\"version\":1,\"gsid_dc\":{\"value\":{\"joinId\":\"ApHNbP5T1cYNBZpOAwSd_p05womKwaWnRw\",\"lastJoinedTimeMs\":1788191577348},\"expires\":1788191877348},\"gcl_ctr\":{\"value\":{\"value\":0,\"timeouts\":0,\"errors\":0,\"eopCount\":0,\"creationTimeMs\":1788191577356},\"expires\":1795967577356}}"
+        },
+        {
+          "name": "jibble.REDIRECT_PATH",
+          "value": "/"
+        }
+      ]
+    }
+  ]
+}
