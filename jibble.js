@@ -1,6 +1,4 @@
-const { chromium } = require('playwright-extra');
-const stealth = require('puppeteer-extra-plugin-stealth')();
-chromium.use(stealth);
+const { firefox } = require('playwright');
 
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const getRandomJitter = (minMinutes, maxMinutes) => {
@@ -42,19 +40,14 @@ async function run() {
         await delay(jitterMs);
     }
 
-    const browser = await chromium.launch({ headless: true }); 
+    // Usamos Firefox en lugar de Chrome para evadir el bloqueo antibots de Cloudflare
+    const browser = await firefox.launch({ headless: true }); 
     const context = await browser.newContext({
         viewport: { width: 1280, height: 720 },
-        userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
         locale: 'es-PE',
         timezoneId: 'America/Lima',
         permissions: ['geolocation', 'notifications'],
-        geolocation: { latitude: -12.046374, longitude: -77.042793 } // Coordenadas base de Lima, Perú
-    });
-    
-    // Engañar a los sistemas anti-bots de Auth0 (Jibble usa Auth0)
-    await context.addInitScript(() => {
-        Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+        geolocation: { latitude: -12.046374, longitude: -77.042793 }
     });
     
     const page = await context.newPage();
