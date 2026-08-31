@@ -40,8 +40,9 @@ async function run() {
         await delay(jitterMs);
     }
 
-    // Usamos Firefox en lugar de Chrome para evadir el bloqueo antibots de Cloudflare
-    const browser = await firefox.launch({ headless: true }); 
+    // Usamos Firefox en modo VISIBLE (headless: false) para burlar la detección de bots.
+    // En GitHub Actions usaremos una pantalla virtual (Xvfb) para que no crashee.
+    const browser = await firefox.launch({ headless: false }); 
     const context = await browser.newContext({
         viewport: { width: 1280, height: 720 },
         locale: 'es-PE',

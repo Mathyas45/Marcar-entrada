@@ -64,7 +64,8 @@ jobs:
           JIBBLE_EMAIL: ${{ secrets.JIBBLE_EMAIL }}
           JIBBLE_PASSWORD: ${{ secrets.JIBBLE_PASSWORD }}
           ACTION_TYPE: ${{ env.ACTION_TYPE }}
-        run: npm start
+        # Usamos xvfb-run para simular una pantalla real y ejecutar el navegador en modo "visible" en la nube
+        run: xvfb-run --auto-servernum --server-args="-screen 0 1280x720x24" npm start
 
       - name: Upload Debug Evidence (on failure)
         if: failure()
