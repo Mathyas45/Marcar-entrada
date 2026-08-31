@@ -63,8 +63,8 @@ async function run() {
 
     try {
         console.log("🌐 Navegando a Jibble...");
-        // Vamos directo a la app
-        await page.goto('https://web.jibble.io/app', { waitUntil: 'networkidle' });
+        // Vamos a la página principal y dejamos que Jibble nos redirija al panel correcto
+        await page.goto('https://web.jibble.io/', { waitUntil: 'networkidle' });
 
         if (page.url().includes('/login')) {
             console.log("🔑 Pase VIP no detectado o expirado. Iniciando sesión manualmente...");
