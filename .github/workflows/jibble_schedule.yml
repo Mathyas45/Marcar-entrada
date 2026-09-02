@@ -1,14 +1,6 @@
 name: Jibble Attendance Schedule
 
 on:
-  schedule:
-    # --- Tiempos en UTC (Perú es UTC-5) ---
-    # 1. Cron de Entrada: 08:25 AM Perú = 13:25 UTC. Días de Lunes a Viernes (1-5)
-    - cron: '25 13 * * 1-5'
-    
-    # 2. Cron de Salida (Todos los días Lunes a Viernes): 06:30 PM Perú = 23:30 UTC.
-    - cron: '30 23 * * 1-5'
-
   workflow_dispatch:
     inputs:
       action_type:
