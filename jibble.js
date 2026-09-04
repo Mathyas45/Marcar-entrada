@@ -142,7 +142,35 @@ async function handleClockIn(page) {
             console.log("⚙️ Esperando formulario de confirmación...");
             await delay(2500); 
 
-            // Dejamos el formulario intacto, tal como solicitó el usuario, y solo presionamos Guardar.
+            // Función auxiliar para llenar selectores desplegables de Quasar (Jibble)
+            async function fillQuasarSelect(testId, exactText) {
+                try {
+                    const selector = `[data-testid="${testId}"]`;
+                    await page.waitForSelector(selector, { timeout: 2000 });
+                    
+                    // Verificar si ya está seleccionado leyendo el valor del input interno
+                    const inputValue = await page.$eval(`${selector} input.q-selectfocus-target`, el => el.value).catch(() => "");
+                    if (inputValue && inputValue.includes(exactText)) {
+                        console.log(`✅ El campo ${testId} ya tiene seleccionado "${exactText}".`);
+                        return;
+                    }
+
+                    console.log(`📝 Seleccionando "${exactText}" en el menú...`);
+                    await page.click(selector);
+                    await delay(1000); // Dar tiempo a que la animación del menú termine
+                    
+                    // Hacer clic en la opción dentro del menú (.q-menu)
+                    await page.locator('.q-menu').getByText(exactText, { exact: false }).first().click();
+                    await delay(500);
+                } catch (e) {
+                    console.log(`⚠️ Advertencia: No se pudo seleccionar "${exactText}" (Tal vez ya estaba puesto). Omitiendo...`);
+                }
+            }
+
+            // Seleccionar los campos obligatorios para UTP (solo en la entrada)
+            await fillQuasarSelect('select-activity', 'Cumplimiento de horario');
+            await fillQuasarSelect('select-project', 'Marcación de horario - UTP');
+
             const confirmBtn = await page.waitForSelector('button:has-text("Save"), button:has-text("Confirm"), button:has-text("Guardar"), button:has-text("Confirmar")', { timeout: 5000 });
             console.log("💾 Presionando botón Guardar...");
             await confirmBtn.click();
